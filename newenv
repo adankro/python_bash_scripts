@@ -1,0 +1,19 @@
+#!/bin/bash
+ if [ "$#" -ne 2 ] ; then
+    echo 'Error you must enter exactly 2 arguments to create new virtualenviroment:'
+    echo '1.-Name of the new virtual env '
+    echo '2.-Python version i.e: python3'
+    read -p "Press [Enter] key ..."
+    return
+fi
+
+name="$1"
+python="$2"
+echo "Creating virual env $name using  python: $python "
+cd ~/.environments/
+virtualenv $name -p $python
+echo "alias $name='source ~/.environments/$name/bin/activate'" >> ~/.bash_profile
+source ~/.bash_profile
+echo "Done! virtual env $name has been created"
+read -p "Press [Enter] key ..."
+return

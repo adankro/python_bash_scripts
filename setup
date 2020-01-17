@@ -1,0 +1,9 @@
+#!/bin/bash
+#make folder if not exist
+mkdir -p ~/.environments
+#copy files
+
+cp -n newenv ~/.environments/newenv
+cp -n deleteenv ~/.environments/deleteenev
+echo "alias newenv='source ~/.environments/newenv'" >> ~/.bash_profile
+echo "alias deleteenv='source ~/.environments/deleteenv'" >> ~/.bash_profile

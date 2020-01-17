@@ -1,0 +1,18 @@
+#!/bin/bash
+if [ "$#" -ne 1 ] ; then
+    echo 'Error you must enter the name of the virtualenv to delete:'
+    read -p "Press [Enter] key ..."
+    return
+fi
+
+name="$1"
+
+echo "are you sure to delete the $name environment?"
+echo "write 'y' to delete" 
+read $opt
+if [ "$opt" = "y" ]; then
+echo "deleting  $name environment ..."
+cd ~/.environments
+rm -r $name
+unalias $name
+fi

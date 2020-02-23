@@ -10,10 +10,9 @@ fi
 name="$1"
 python="$2"
 echo "Creating virual env $name using  python: $python "
-cd ~/.environments/
-virtualenv $name -p $python
-echo "alias $name='source ~/.environments/$name/bin/activate'" >> ~/.bash_profile
-source ~/.bash_profile
+virtualenv ~/.environments/$name -p $python
+echo "alias $name='source ~/.environments/$name/bin/activate'" >> ~/.bash_aliases
+. ~/.bash_aliases
 echo "Done! virtual env $name has been created"
 read -p "Press [Enter] key ..."
 return

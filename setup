@@ -3,7 +3,11 @@
 mkdir -p ~/.environments
 #copy files
 
+
 cp -n newenv ~/.environments/newenv
-cp -n deleteenv ~/.environments/deleteenev
-echo "alias newenv='source ~/.environments/newenv'" >> ~/.bash_profile
-echo "alias deleteenv='source ~/.environments/deleteenv'" >> ~/.bash_profile
+cp -n rmenv ~/.environments/rmenv
+#echo "alias newenv='source ~/.environments/newenv'" >> ~/.bash_profile
+#echo "alias deleteenv='source ~/.environments/deleteenv'" >> ~/.bash_profile
+echo "alias newenv='source ~/.environments/newenv'" >> ~/.bash_aliases
+echo "alias rmenv='source ~/.environments/rmenv'" >> ~/.bash_aliases
+. ~/.bash_aliases

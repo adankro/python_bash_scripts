@@ -12,7 +12,6 @@ echo "write 'y' to delete"
 read $opt
 if [ "$opt" = "y" ]; then
 echo "deleting  $name environment ..."
-cd ~/.environments
-rm -r $name
+rm -r ~/.environments/$name
 unalias $name
 fi
